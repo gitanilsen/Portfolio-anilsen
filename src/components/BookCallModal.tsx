@@ -83,15 +83,15 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Modal Container */}
-      <div className="relative bg-[#111111] border border-[#222] rounded-xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row min-h-[600px] text-[#EAEAEA]">
+      <div className="relative bg-[#111111] border border-[#222] rounded-xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row min-h-fit md:min-h-[600px] text-[#EAEAEA] my-auto">
         
         {/* Close Button */}
         <button 
@@ -210,7 +210,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
               </div>
 
               {/* Right Panel: Time Slots */}
-              <div className="w-full md:w-[280px] p-8 bg-[#111111] overflow-y-auto max-h-[600px]">
+              <div className="w-full md:w-[280px] p-8 bg-[#111111] overflow-y-auto md:max-h-[600px]">
                 {selectedDate ? (
                   <>
                     <h3 className="font-medium text-white mb-6">
@@ -238,7 +238,7 @@ export default function BookCallModal({ isOpen, onClose }: BookCallModalProps) {
           )}
 
           {step === 2 && (
-            <div className="flex-1 p-8 flex flex-col h-full overflow-y-auto max-h-[600px]">
+            <div className="flex-1 p-8 flex flex-col h-full overflow-y-auto md:max-h-[600px]">
               <div className="max-w-md w-full mx-auto flex-1 space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-white mb-2">Your name *</label>
