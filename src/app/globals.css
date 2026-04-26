@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark Mode (Default for "Terminal" aesthetic) */
+  --bg-main: #0A0A0A;
+  --bg-surface: #111111;
+  --text-main: #EAEAEA;
+  --text-muted: #555555;
+  --text-muted-hover: #888888;
+  --border-main: #222222;
+  --border-subtle: #333333;
+  --accent-primary: #E4FF00;
+  --accent-text: #E4FF00;
+  --terminal-green: #00FF41;
+  --true-black: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme='light'] {
+  /* Light Mode */
+  --bg-main: #F4F4F5; /* zinc-100 */
+  --bg-surface: #FFFFFF;
+  --text-main: #09090B; /* zinc-950 */
+  --text-muted: #71717A; /* zinc-500 */
+  --text-muted-hover: #3F3F46; /* zinc-700 */
+  --border-main: #D4D4D8; /* zinc-300 */
+  --border-subtle: #E4E4E7; /* zinc-200 */
+  --accent-primary: #D1EA00; /* slightly darker yellow for white bg */
+  --accent-text: #09090B; /* Dark text instead of yellow for legibility */
+  --terminal-green: #00BA2F; /* darker green for contrast */
+  --true-black: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-bg-main: var(--bg-main);
+  --color-bg-surface: var(--bg-surface);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-muted-hover: var(--text-muted-hover);
+  --color-border-main: var(--border-main);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent: var(--accent-primary);
+  --color-terminal: var(--terminal-green);
+  --color-true-black: var(--true-black);
+
+  --font-mono: var(--font-jetbrains-mono);
+  --font-body: var(--font-inter);
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body), sans-serif;
+  border-radius: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-true-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Reset border radius everywhere by default except where explicitly overridden */
+* {
+  border-radius: 0;
 }
