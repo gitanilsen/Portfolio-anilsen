@@ -24,7 +24,7 @@ export default function Home() {
       <ContactTerminal />
 
       {/* Footer */}
-      <footer className="border-t border-border-main px-6 md:px-16 lg:px-24 py-8">
+      <footer className="border-t border-border-main px-6 md:px-16 lg:px-24 pt-8 pb-32 md:pb-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-xs text-text-muted text-center md:text-left">
             <span>© 2026 Anil Sen. All rights reserved.</span>
