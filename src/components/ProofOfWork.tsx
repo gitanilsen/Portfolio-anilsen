@@ -15,6 +15,26 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
+    id: "june9clothing",
+    name: "June 9 Clothing",
+    scope: "E-Commerce & Advertising",
+    tags: ["Custom Design", "Automations", "Ads Management"],
+    description:
+      "Designed and customized the e-commerce website for a western wear brand targeting Indian and overseas markets. Integrated analytical tools, built automations, and managed Meta & Google Ads.",
+    color: "var(--accent-text)",
+    href: "https://june9clothing.com/",
+  },
+  {
+    id: "vyomtara",
+    name: "VyomTara",
+    scope: "E-Commerce & Advertising",
+    tags: ["Custom Design", "Automations", "Ads Management"],
+    description:
+      "Designed and customized the e-commerce website for an ethnic wear brand for Indian and overseas markets. Integrated analytical tools, built automations, and managed Meta & Google Ads.",
+    color: "var(--terminal-green)",
+    href: "https://www.vyomtara.com/",
+  },
+  {
     id: "rengen-ai",
     name: "RenGen AI Studio",
     scope: "SaaS Product / Android App",
